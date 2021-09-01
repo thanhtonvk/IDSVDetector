@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container row">
+    <form action="/" method="post" enctype="multipart/form-data" class="col-md-4">
+        <input type="file" name="file" class="form-control"/>
+        <input type="submit" value="Tải lên" class="btn btn-primary">
+    </form>
+    {% if student %}
+        <img src="{{ url_for('static',filename='out.png') }}" alt="User Image">
+        <table class="table">
+            <tbody>
+            <tr>
+                <th scope="row">Mã sinh viên</th>
+                <td>{{ student.id }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Họ tên</th>
+                <td>{{ student.hovaten }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Ngày sinh</th>
+                <td>{{ student.ngaysinh }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Lớp</th>
+                <td>{{ student.lop }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Ngành học</th>
+                <td>{{ student.nganhhoc }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Khóa học</th>
+                <td>{{ student.khoahoc }}</td>
+            </tr>
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+
+
+</body>
+</html>  
